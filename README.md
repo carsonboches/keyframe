@@ -26,13 +26,17 @@ python app.py
 
 Open the local Flask address shown in the terminal.
 
-## Command line
+## Sample Files
 
-```bash
-python keyframe.py process --video "/path/to/performance.mov" --score "/path/to/score.mxl"
-```
+Want to try KeyFrame without your own recording and score?
 
-> Note: Sample files are available in the samples/ directory.
+Sample files are available on [Google Drive](https://drive.google.com/drive/folders/1lMi5dIqtS9cwZ3QsBR8CmXVNHkQ_uB56?usp=share_link).
+
+The folder contains:
+- A sample piano performance recording
+- The corresponding MusicXML score
+
+Download both files and upload them to KeyFrame to test the application.
 
 ## Main files
 
