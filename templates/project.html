@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KeyFrame Project</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/opensheetmusicdisplay@1.9.2/build/opensheetmusicdisplay.min.js"></script>
+</head>
+<body>
+  <main class="shell project-shell">
+    <header class="project-header">
+      <div>
+        <p class="eyebrow">Synchronized performance</p>
+        <h1 id="projectTitle">KeyFrame</h1>
+      </div>
+      <a class="quiet-link" href="/">New project</a>
+    </header>
+
+    <section class="player-panel panel">
+      <video id="performanceVideo" controls preload="metadata"></video>
+
+      <div class="transport">
+        <div>
+          <span class="label">Selected</span>
+          <strong id="selectedMeasure">Choose a measure</strong>
+        </div>
+        <div class="transport-actions">
+          <button id="replayButton" disabled>Replay measure</button>
+          <label class="loop-toggle">
+            <input type="checkbox" id="loopToggle">
+            <span>Loop</span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section class="score-panel panel">
+      <div class="score-toolbar">
+        <div>
+          <span class="label">Score</span>
+          <strong>Click a measure to hear it</strong>
+        </div>
+        <div id="alignmentSummary" class="alignment-summary"></div>
+      </div>
+
+      <div id="measureFallback" class="measure-strip"></div>
+      <div id="scoreWrapper">
+        <div id="score"></div>
+        <div id="measureOverlay" aria-hidden="true"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    window.KEYFRAME_PROJECT_ID = {{ project_id|tojson }};
+  </script>
+  <script src="{{ url_for('static', filename='js/project.js') }}"></script>
+</body>
+</html>

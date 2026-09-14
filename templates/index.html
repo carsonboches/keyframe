@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KeyFrame</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+  <main class="shell landing">
+    <section class="hero">
+      <p class="eyebrow">Score-synchronized practice video</p>
+      <h1>KeyFrame</h1>
+      <p class="lede">
+        Upload a MusicXML score and a performance video. KeyFrame uses the recording audio to align the performance
+        to the score so you can jump directly to any measure instead of scrubbing through video.
+      </p>
+    </section>
+
+    <section class="panel upload-panel">
+      <form id="uploadForm">
+        <div id="upload-form-fields">
+          <label>
+            <span>Performance video</span>
+            <input type="file" name="video" accept="video/*" required>
+          </label>
+
+          <label>
+            <span>MusicXML score</span>
+            <input type="file" name="score" accept=".musicxml,.xml,.mxl" required>
+          </label>
+        </div>
+
+        <button type="submit">Build score-synchronized practice video</button>
+      </form>
+
+      <div id="status" class="status" hidden></div>
+    </section>
+
+    <section class="feature-grid">
+      <article><strong>Click a measure</strong><span>Jump straight to the matching moment in the performance.</span></article>
+      <article><strong>Loop difficult spots</strong><span>Repeat the selected measure without touching the playback bar.</span></article>
+      <article><strong>No manual synchronization needed</strong><span>The app focuses on reliable score ↔ performance synchronization.</span></article>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html>
